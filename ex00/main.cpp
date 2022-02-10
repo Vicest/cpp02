@@ -6,7 +6,7 @@
 /*   By: vicmarti <vicmarti@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 19:09:47 by vicmarti          #+#    #+#             */
-/*   Updated: 2022/02/10 19:12:04 by vicmarti         ###   ########.fr       */
+/*   Updated: 2022/02/10 20:22:47 by vicmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,24 @@
 
 int	main(void)
 {
-	Fixed a;
-	Fixed b(a);
-	Fixed c;
+	{
+		Fixed a;
+		Fixed b(a);
+		Fixed c;
 
-	c = b;
+		c = b;
 
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+		std::cout << a.getRawBits() << std::endl;
+		std::cout << b.getRawBits() << std::endl;
+		std::cout << c.getRawBits() << std::endl;
+	}
+	{
+		std::cout << "Additional tests:" << std::endl;
+		Fixed	a;
 
-	return 0;
+		std::cout << a.getRawBits() << std::endl;
+		a.setRawBits(0x000000FF);
+		std::cout << a.getRawBits() << std::endl;
+		return 0;
+	}
 }
